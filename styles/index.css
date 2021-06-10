@@ -1,20 +1,3 @@
-body {
-    background: rgb(0, 0, 60);
-    color: rgb(30, 30, 60);
-    padding: 1vw;
-    font-family: Baskerville, Perpetua, serif;
-}
-#all-contents {
-    max-width: 70vw;
-    margin: auto;
-}
-
-/* main container area beneath menu */
-main {
-    background: rgb(245, 238, 219);
-    display: flex;
-    border-radius: 4px 15px;
-}
 .sidebar {
     margin-right: 25px;
     padding: 10px;
@@ -30,8 +13,7 @@ main {
     padding: 15px;
 }
 #interests {
-    width: 250px;
-    max-width: 52%;
+    height:50%;
     border: 2px dashed rgb(120, 20, 40);
     padding: 8px;
 }

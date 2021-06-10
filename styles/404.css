@@ -1,20 +1,3 @@
-body {
-    background: rgb(0, 0, 60);
-    color: rgb(30, 30, 60);
-    padding: 10px;
-    font-family: Baskerville, Perpetua, serif;
-}
-#all-contents {
-    max-width: 70%;
-    margin: auto;
-}
-
-/* main container area beneath menu */
-main {
-    background: rgb(245, 238, 219);
-    display: flex;
-    border-radius: 4px 15px;
-}
 p {
     margin-left: 2%;
     font-family: monospace;
@@ -23,4 +6,7 @@ p {
 #link-home {
     color: rgb(30, 30, 60);
     font-weight: bold;
+}
+h1 {
+    font-family: Baskerville, Perpetua, serif
 }

@@ -9,20 +9,20 @@ nav {
 #nav-ul {
     list-style-image: none;
 }
-.nav-li {
+#nav-ul li {
     display: inline-block;
     padding: 0 10px;
     color: #fff;
     font-size: large;
 }
-h1 {
+#nav-ul a {
+    color: inherit;
+    text-decoration: none;
+}
+nav h1 {
     display: flex;
     align-items: center;
     color: white;
     flex: 1;
     margin: 0;
-}
-.nav-links {
-    color: inherit;
-    text-decoration: none;
 }
