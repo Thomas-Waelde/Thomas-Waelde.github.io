@@ -1,42 +1,12 @@
 body {
     background: rgb(0, 0, 60);
     color: rgb(30, 30, 60);
-    padding: 10px;
+    padding: 1vw;
     font-family: Baskerville, Perpetua, serif;
 }
 #all-contents {
-    max-width: 800px;
+    max-width: 70vw;
     margin: auto;
-}
-
-/* navigation menu */
-nav {
-    background: rgb(120, 20, 40);
-    margin: 0 auto;
-    display: flex;
-    border-radius: 15px 4px;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-h1 {
-    display: flex;
-    align-items: center;
-    color: white;
-    flex: 1;
-    margin: 0;
-}
-#nav-ul {
-    list-style-image: none;
-}
-.nav-li {
-    display: inline-block;
-    padding: 0 10px;
-    color: #fff;
-    font-size: large;
-}
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 /* main container area beneath menu */
@@ -50,7 +20,7 @@ main {
     padding: 10px;
 }
 .sidebar-img {
-    width: 200px;
+    width: 19vw;
     margin: 5px;
     padding: 3px;
     background-color:rgb(9, 144, 63)
@@ -60,6 +30,8 @@ main {
     padding: 15px;
 }
 #interests {
+    width: 250px;
+    max-width: 52%;
     border: 2px dashed rgb(120, 20, 40);
     padding: 8px;
 }
