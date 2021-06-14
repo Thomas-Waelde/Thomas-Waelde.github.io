@@ -22,10 +22,11 @@ nav {
     color: #fff;
     text-shadow: -2px 2px 2px black;
 }
-nav h1 {
+nav h1 a {
     display: flex;
     align-items: center;
     color: #ddd;
     flex: 1;
     margin: 0;
+    text-decoration: none;
 }
