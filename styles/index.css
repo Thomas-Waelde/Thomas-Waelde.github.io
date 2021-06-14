@@ -8,15 +8,18 @@
     padding: 3px;
     background-color:rgb(9, 144, 63)
 }
-.content {
-    flex: 1;
-    padding: 15px;
-}
 #interests {
-    height:50%;
     border: 2px dashed rgb(120, 20, 40);
     padding: 8px;
 }
-h2, h3 {
+h2 {
     margin: 0px;
+}
+header h1 {
+    margin-bottom: 0px;;
+}
+header p {
+    margin-top: 0px;
+    margin-left: 20px;
+    font-style: italic;
 }

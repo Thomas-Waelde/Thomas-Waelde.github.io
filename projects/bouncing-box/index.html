@@ -40,16 +40,19 @@
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
+			var boardHeight = board.height(); 
 
 			// Every 20 milliseconds, call the update Function (see below)
-			setInterval(update, 20);
+			var loop = setInterval(update, 20);
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
+			board.on('click', handleMisclick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
+			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
+				box.css("top", newPositionY);
 			}
 
 			// changes the text displayed on the Box
@@ -62,11 +65,16 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			var x_pos = 0;
-			var speed = 4;
+			var x_pos = Math.random() * boardWidth;
+			var y_pos = Math.random() * boardHeight;
+			var x_speed = 3;
+			var y_speed = 3;
+			var speedIncrement = 1;
 			var score = 0;
-			changeBoxText(score);
+			var misclickCount = 0;
+			const lives = 10;
 			const pointIncrement = 1;
+			changeBoxText(score);
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -74,10 +82,13 @@
 			turn it around! 
 			*/
 			function update() {
-				moveBoxTo(x_pos);
+				moveBoxTo(x_pos, y_pos);
 				if (x_pos > boardWidth || x_pos < 0)
-					speed = -speed;
-				x_pos += speed;
+					x_speed = -x_speed + (Math.round(Math.random()) == 1 ? 1 : -1);
+				if (y_pos > boardHeight || y_pos < 0)
+					y_speed = -y_speed + (Math.round(Math.random()) == 1 ? 1 : -1);
+				x_pos += x_speed;
+				y_pos += y_speed;
 			};
 
 			/* 
@@ -86,19 +97,32 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				x_pos = 0;
+				x_pos = Math.random() * boardWidth;
+				y_pos = Math.random() * boardHeight;
 				score += pointIncrement;
-				speed += speed < 0 ? -1 : 1;
+				x_speed += x_speed < 0 ? -1 : 1;
+				y_speed += y_speed < 0 ? -1 : 1;
 				changeBoxText(score);
-				console.log(getRandomColor());
-				let backgroundColor = Math.round(Math.random() * 0xffffff);
-				box.css("background-color", "#" + backgroundColor.toString(16));
-				box.css("color", "#" + (0xffffff - backgroundColor).toString(16))
+				if (score % 3 == 0) {
+					let backgroundColor = getRandomColor();
+					box.css("background-color", "#" + backgroundColor.toString(16));
+					box.css("color", "#" + (0xffffff - backgroundColor).toString(16));
+					speedIncrement += 1;
+				}
 			};
 
-			//returns randomly generated hexadecimal integer in range [0, ffffff] with '#' prepended
+			function handleMisclick() {
+				misclickCount += 1;
+				if (misclickCount == lives) {
+					clearInterval(loop);
+					box.off('click', handleBoxClick);
+					board.off('click', handleMisclick);
+				}
+			}
+
+			//returns randomly generated integer in range [black, white] || [0, ffffff]
 			function getRandomColor() {
-    			return "#" + Math.round(Math.random() * 0xffffff).toString(16);
+    			return Math.floor(Math.random() * 0xffffff);
 			};
 
 		})();

@@ -12,17 +12,20 @@ nav {
 #nav-ul li {
     display: inline-block;
     padding: 0 10px;
-    color: #fff;
     font-size: large;
 }
 #nav-ul a {
-    color: inherit;
+    color: #ddd;
     text-decoration: none;
+}
+#nav-ul a:hover {
+    color: #fff;
+    text-shadow: -2px 2px 2px black;
 }
 nav h1 {
     display: flex;
     align-items: center;
-    color: white;
+    color: #ddd;
     flex: 1;
     margin: 0;
 }
