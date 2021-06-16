@@ -7,6 +7,9 @@ nav {
     margin-bottom: 20px;
 }
 #nav-ul {
+    padding: 0px;
+    display: flex;
+    align-items: center;
     list-style-image: none;
 }
 #nav-ul li {
@@ -23,10 +26,11 @@ nav {
     text-shadow: -2px 2px 2px black;
 }
 nav h1 a {
-    display: flex;
-    align-items: center;
     color: #ddd;
-    flex: 1;
     margin: 0;
     text-decoration: none;
+}
+nav h1 {
+    display: flex;
+    flex-grow: 1;
 }
