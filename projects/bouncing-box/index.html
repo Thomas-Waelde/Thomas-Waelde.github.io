@@ -100,8 +100,8 @@
 				x_pos = Math.random() * boardWidth;
 				y_pos = Math.random() * boardHeight;
 				score += pointIncrement;
-				x_speed += x_speed < 0 ? -1 : 1;
-				y_speed += y_speed < 0 ? -1 : 1;
+				x_speed += x_speed < 0 ? -speedIncrement : speedIncrement;
+				y_speed += y_speed < 0 ? -speedIncrement : speedIncrement;
 				changeBoxText(score);
 				if (score % 3 == 0) {
 					let backgroundColor = getRandomColor();
